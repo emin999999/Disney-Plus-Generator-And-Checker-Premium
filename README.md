@@ -1,2 +1,2 @@
-# Disney-Plus-Generator-Premium
+# For Use
 What you need to install: Python and Selenium

@@ -1,5 +1,5 @@
 print("Owned By Emin INC.")
-print("Disney Plus Account Generator And Checker 1.0")
+print("Disney Plus Account Premium Edition Generator And Checker 1.0")
 import random
 import string
 import time

